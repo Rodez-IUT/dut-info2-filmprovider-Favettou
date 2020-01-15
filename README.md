@@ -1,7 +1,7 @@
 # DUT Info2 - FilmProvider
 
-### NOM : DOE
-### Prénom : John
+### NOM : FAVETTO
+### Prénom : Ambre
 ### Groupe de TP : 
 - [x] 1
 
@@ -14,7 +14,7 @@ Rappel pour configurer Git lors d’un premier usage sur une machine de travail 
     git config --global user.name "Your Username"
     git config --global user.email "Your email"
     git config --global color.ui "auto"
-	git config —-global http.proxy "http://cache.iut-rodez.fr:8080"
+	git config --global http.proxy "http://cache.iut-rodez.fr:8080"
     git config --global -l
 
 Créez votre projet sur Github en vous inscrivant au devoir indiqué par votre enseignant.  
