@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE librairie SYSTEM "Librairie.dtd">
+
+<librairie>
+    <entete>
+        <strong> Bienvenue dans cette librairie </strong>
+        <em> Coucou </em>
+        <!--&copyright;-->
+    </entete>
+    <livre num_ISBN="154-126">
+        <titre>Autobiographie Adrien Garrouste</titre>
+        <description> Mon autobiographie exceptionnelle, lisez là (svp)</description>
+        <prix type="TTC">
+            <prixAchat>35</prixAchat>
+        </prix>
+    </livre>
+</librairie>
