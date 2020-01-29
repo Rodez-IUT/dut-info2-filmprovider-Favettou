@@ -5,12 +5,12 @@
     <entete>
         <strong> Bienvenue dans cette librairie </strong>
         <em> Coucou </em>
-        <!--&copyright;-->
+        &copyright;
     </entete>
-    <livre num_ISBN="154-126">
+    <livre num_ISBN="154126">
         <titre>Autobiographie Adrien Garrouste</titre>
         <description> Mon autobiographie exceptionnelle, lisez là (svp)</description>
-        <prix type="TTC">
+        <prix tva="5.5" devise="dollars" type="HT">
             <prixAchat>35</prixAchat>
         </prix>
     </livre>

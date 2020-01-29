@@ -1,6 +1,6 @@
 <!ELEMENT librairie (entete, livre)>
     <!ENTITY % balises "(#PCDATA|strong|em|img)*">
-        <!ELEMENT entete %balises; %copyright;>
+        <!ELEMENT entete %balises;>
         <!ENTITY copyright "&#xA9;Librairie &amp; Internet 2020">
         <!ELEMENT strong (#PCDATA)>
         <!ELEMENT em (#PCDATA)>
@@ -8,21 +8,20 @@
         <!ATTLIST img src CDATA #REQUIRED
                       title CDATA #IMPLIED>
     <!ELEMENT  livre (titre, auteur*, description, prix)>
-    <!ATTLIST livre num_ISBN ID #REQUIRED>
+    <!ATTLIST livre num_ISBN NMTOKEN #REQUIRED>
         <!ELEMENT titre (#PCDATA)>
         <!ELEMENT auteur (auteurs*|collectif)>
             <!ENTITY % appelation "(nom, prenom?)">
-            <!ELEMENT auteurs %appelation;+>
+            <!ELEMENT auteurs (%appelation;)+>
                 <!ELEMENT nom (#PCDATA)>
                 <!ELEMENT prenom (#PCDATA)>
-            <!ELEMENT collectif (direction, membre)
+            <!ELEMENT collectif (direction, membre)>
                 <!ELEMENT direction %appelation;>
                 <!ELEMENT membre (#PCDATA)>
         <!ELEMENT description %balises;>
         <!ELEMENT prix (prixAchat)>
-        <!ATTLIST prix tva #FIXED"5.5"
-                       type ("HT" | TTC)
-                       devise ("euros" | livres | dollars)>
+        <!ATTLIST prix tva NMTOKEN #FIXED "5.5"
+                       type (HT|TTC) "HT"
+                       devise (euros|livres|dollars) "euros">
             <!ELEMENT prixAchat (#PCDATA)>
 
-            <!ATTLIST type (HT|TTC)>
