@@ -1,0 +1,5 @@
+1) /films/film/titre
+2) /films/film[titre="Minority Report"]/resume/text/text()
+3) /films/realisateur[last()]/nom
+4) /films/film[position() = 2]/titre
+5) /films/film/titre/resume/contains(text, "mafia")/position()
