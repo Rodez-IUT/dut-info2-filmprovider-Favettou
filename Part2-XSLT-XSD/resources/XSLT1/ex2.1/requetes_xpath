@@ -1,3 +1,5 @@
+ -- EXERCICE XSLT1 - REQUETES XPATH --
+
 1) /films/film/titre
 2) /films/film[titre="Minority Report"]/resume/text/text()
 3) /films/realisateur[last()]/nom
@@ -6,3 +8,17 @@
 6) /films/film/resume[image]/../titre
 7) /films/film[@id_realisateur="real_01"]/@annee
 8) count(/films/film[@annee="2003"])
+
+-- CORRECTION --
+
+1) /films/film/titre
+   //film/titre
+   //titre
+2) //film[titre="Minority Report"]/resume/text
+3) //realisateur[last()]/nom
+4) //film[position() = 2]/titre
+   //film[2]/titre
+5) //film[contains(resume/text,"mafia")]/number(count(preceding-sibling::film) + 1)
+6) //film[boolean(resume/image) = true()]/titre
+7) //film[//realisateur[nom="Scorsese"]/@id_realisateur = @id_realisateur]/@annee
+8) count(//film[@annee = 2003])
