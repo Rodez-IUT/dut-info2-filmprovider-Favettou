@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="films">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="realisateur"/>
+                <xs:element name="film"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="realisateur">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id_realisateur" type="xs:date"/>
+                <xs:element name="nom" type="xs:string"/>
+                <xs:element name="prenom" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="film">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id_film" type="xs:date"/>
+                <xs:element name="id_realisateur" type="xs:date"/>
+                <xs:element name="annee" type="xs:integer"/>
+                <xs:element name="titre" type="xs:string"/>
+                <xs:element name="resume"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="resume">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="image" type="xs:string"/>
+                <xs:element name="texte" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:schema>
