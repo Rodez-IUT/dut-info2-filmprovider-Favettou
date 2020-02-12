@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
     <xs:element name="films">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="realisateur"/>
-                <xs:element name="film"/>
+                <xs:element name="realisateur" type="realisateur_type" maxOccurs="unbounded"/>
+                <xs:element name="film" type="film_type" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="realisateur">
-        <xs:complexType>
+        <xs:complexType name="realisateur_type">
             <xs:sequence>
-                <xs:element name="id_realisateur" type="xs:date"/>
-                <xs:element name="nom" type="xs:string"/>
                 <xs:element name="prenom" type="xs:string"/>
+                <xs:element name="nom" type="xs:string"/>
             </xs:sequence>
+            <xs:attribute name="id_realisateur" type="xs:ID"/>
         </xs:complexType>
-    </xs:element>
 
-    <xs:element name="film">
-        <xs:complexType>
+        <xs:complexType name="film_type">
             <xs:sequence>
-                <xs:element name="id_film" type="xs:date"/>
-                <xs:element name="id_realisateur" type="xs:date"/>
-                <xs:element name="annee" type="xs:integer"/>
                 <xs:element name="titre" type="xs:string"/>
-                <xs:element name="resume"/>
+                <xs:element name="resume" type="resume_type"/>
             </xs:sequence>
+            <xs:attribute name="id_film" type="xs:ID"/>
+            <xs:attribute name="id_realisateur" type="xs:IDREF"/>
+            <xs:attribute name="annee" type="xs:integer"/>
         </xs:complexType>
-    </xs:element>
 
-    <xs:element name="resume">
-        <xs:complexType>
+        <xs:complexType name="resume_type">
             <xs:sequence>
-                <xs:element name="image" type="xs:string"/>
-                <xs:element name="texte" type="xs:string"/>
+                <xs:element name="image" type="image_type" minOccurs="0"/>
+                <xs:element name="text" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
+
+    <xs:complexType name="image_type">
+            <xs:attribute name="source" type="xs:string"/>
+    </xs:complexType>
+
     </xs:schema>
