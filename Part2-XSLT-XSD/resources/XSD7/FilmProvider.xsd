@@ -36,6 +36,7 @@
         <xs:attribute name="id_realisateur" type="fp:IdRealistaeur"
                       use="required"/>
     </xs:complexType>
+
     <xs:complexType name="Film">
         <xs:sequence>
             <xs:element name="titre" type="xs:string"/>
